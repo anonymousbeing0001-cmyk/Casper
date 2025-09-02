@@ -1,0 +1,16 @@
+
+{
+  "name": "CoreMemory AI",
+  "short_name": "CoreAI",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
