@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casper the AI</title>
+<link rel="manifest" href="manifest.json">
+<style>
+  body { margin:0; background:#000; color:#fff; font-family:sans-serif; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; }
+  #chat { width:50%; max-width:600px; height:70%; overflow-y:auto; border:1px solid #fff; padding:10px; margin-bottom:10px; background:#111; }
+  #message { width:80%; padding:5px; }
+  #send { padding:5px 10px; }
+</style>
+</head>
+<body>
+<h1>Casper the AI</h1>
+<div id="chat"></div>
+<input id="message" type="text" placeholder="Type a message..." />
+<button id="send">Send</button>
+<script src="ai-visual.js"></script>
+<script>
+const ws = new WebSocket('ws://' + location.host);
+const chat = document.getElementById('chat');
+
+ws.onmessage = (msg) => {
+  const div = document.createElement('div');
+  div.textContent = msg.data;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+};
+
+document.getElementById('send').onclick = () => {
+  const input = document.getElementById('message');
+  if(input.value.trim() !== '') {
+    ws.send(input.value);
+    input.value = '';
+  }
+};
+
+document.getElementById('message').addEventListener('keypress', (e) => {
+  if(e.key === 'Enter') document.getElementById('send').click();
+});
+</script>
+</body>
+</html>
