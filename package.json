@@ -1,0 +1,29 @@
+{
+  "name": "casper-ai",
+  "version": "3.0.0",
+  "description": "Casper AI Autonomous Multi-Modal System - Version 3",
+  "main": "casper_autonomous.js",
+  "scripts": {
+    "start": "node casper_autonomous.js",
+    "dashboard": "node casper_autonomous.js",
+    "self-update": "node casper_self_update.js"
+  },
+  "keywords": ["ai", "autonomous", "multi-modal", "casper", "v3"],
+  "author": "CasperAI",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^6.13.0",
+    "firebase-admin": "^11.12.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "puppeteer": "^21.3.3",
+    "googleapis": "^120.0.0",
+    "dropbox": "^11.1.0",
+    "openai": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
