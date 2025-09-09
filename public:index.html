@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CasperAI - Advanced AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
+</head>
+<body>
+    <div id="chatContainer">
+        <header>
+            <h1>CasperAI 👻</h1>
+            <p>Your Advanced AI Assistant</p>
+            <div id="statusIndicator"></div>
+            <button id="helpBtn">Commands</button>
+        </header>
+        
+        <div id="chat"></div>
+        
+        <div id="controls">
+            <textarea id="userInput" placeholder="Message CasperAI..." rows="1"></textarea>
+            <button id="sendBtn">Send</button>
+        </div>
+        
+        <div id="patchControls">
+            <textarea id="codeTextArea" placeholder="Paste patch code here..." rows="2"></textarea>
+            <button id="repairBtn">Apply Patch</button>
+        </div>
+        
+        <div id="info">
+            <p>Type "help" for commands | Connected to server</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
